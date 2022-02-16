@@ -1,0 +1,17 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "fullName": "Sanjay Kumar",
+      "userName": "Sanjay",
+      "email": "sanjay12@gmail.com",
+      "phoneNumber": "9806678801",
+      "password": "abcdefgh",
+      "confirmPassword": "abcdefgh"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

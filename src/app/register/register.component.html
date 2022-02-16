@@ -1,0 +1,122 @@
+<body>
+<div class="container">
+  <div class="title">Registration</div>
+  <div class="content">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="user-details">
+        <div class="form-group">
+          <span class="details">Full Name</span>
+          <input type="text" placeholder="Enter your name" formControlName="fullName" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" required>
+          <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
+            <div *ngIf="f.fullName.errors.required">Fullname is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <span class="details">Username</span>
+          <input type="text" placeholder="Enter your username" formControlName="userName" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" required>
+          <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+            <div *ngIf="f.userName.errors.required">Username is required</div>
+            <div *ngIf="f.userName.errors.minlength">
+              Username must be at least 6 characters
+            </div>
+            <div *ngIf="f.userName.errors.maxlength">
+              Username must not exceed 20 characters
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <span class="details">Email</span>
+          <input type="email" name="email" placeholder="Enter your email" formControlName="email" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required>
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+            <div *ngIf="f.email.errors.email">Email is invalid</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <span class="details">Phone Number</span>
+          <input type="text" placeholder="Enter your number" name="phone" formControlName="phoneNumber" class="form-control" 
+          [ngClass]="{' is-invalid ': submitted && f.phoneNumber.errors}" required>
+          <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
+            <div *ngIf="f.phoneNumber.errors.required">Phone Number is required</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <span class="details">Password</span>
+          <input type="password" placeholder="Enter your password" formControlName="password" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required>
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">
+              Password must be at least 6 characters
+            </div>
+            <div *ngIf="f.password.errors.maxlength">
+              Username must not exceed 40 characters
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <span class="details">Confirm Password</span>
+          <input type="password" placeholder="Confirm your password" formControlName="confirmPassword"
+            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" required>
+          <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+            <div *ngIf="f.confirmPassword.errors.required">
+              Confirm Password is required
+            </div>
+            <div *ngIf="f.confirmPassword.errors.matching">
+              Confirm Password does not match
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+        <div><img [src]="url" *ngIf="url" height="100" width="100" id="img1"></div>
+        <p>
+          <input type="file" (change)="selectFile($event)">
+        </p>
+      </div>
+      <div class="button">
+        <input type="submit" value="Register" (click)="postEmployeeDetails()" title="When clicked this Button Form Values will be stored into the below table">
+        <input type="button" value="Update" (click)="updateEmployee()" title="When Clicked this Button Values will be updated">
+      </div>
+    </form>
+  </div>
+
+  <div class="table-container">
+    <table class="table mt-3">
+      <thead>
+          <tr>
+              <th scope="col">User ID</th>
+              <th scope="col">Full Name</th>
+              <th scope="col">User Name</th>
+              <th scope="col">Email ID</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">Password</th>
+              <th scope="col">Confirm Password</th>
+              <th scope="col">Action</th>      
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let row of employeeData">
+              <td>{{row.id}}</td>
+              <td>{{row.fullName}}</td>
+              <td>{{row.userName}}</td>
+              <td>{{row.email}}</td>
+              <td>{{row.phoneNumber}}</td>
+              <td>{{row.password}}</td>
+              <td>{{row.confirmPassword}}</td>
+              <td>
+                <button class="btn btn-info" type="button" (click)="onEdit(row)" 
+                data-toggle="tooltip" data-placement="top" title="When click the Edit Button this column values are shown in above form">Edit</button>
+                <button class="btn btn-danger" type="button" (click)="deleteEmployee(row)"
+                data-toggle="tooltip" data-placement="top" title="whwn click this Delete Button this column values are Deleted">Delete</button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+  </div>
+</div>
+</body>
