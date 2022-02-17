@@ -7,7 +7,7 @@
         <div class="form-group">
           <span class="details">Full Name</span>
           <input type="text" placeholder="Enter your name" formControlName="fullName" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" required>
+            [ngClass]="{ 'is-invalid': submitted && f.fullName.errors }" title="Enter your Fullname" required>
           <div *ngIf="submitted && f.fullName.errors" class="invalid-feedback">
             <div *ngIf="f.fullName.errors.required">Fullname is required</div>
           </div>
@@ -15,7 +15,7 @@
         <div class="form-group">
           <span class="details">Username</span>
           <input type="text" placeholder="Enter your username" formControlName="userName" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" required>
+            [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" title="Enter your 6 digit Username" required>
           <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
             <div *ngIf="f.userName.errors.required">Username is required</div>
             <div *ngIf="f.userName.errors.minlength">
@@ -29,7 +29,7 @@
         <div class="form-group">
           <span class="details">Email</span>
           <input type="email" name="email" placeholder="Enter your email" formControlName="email" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required>
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" title="Enter your Email" required>
           <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
             <div *ngIf="f.email.errors.required">Email is required</div>
             <div *ngIf="f.email.errors.email">Email is invalid</div>
@@ -38,7 +38,7 @@
         <div class="form-group">
           <span class="details">Phone Number</span>
           <input type="text" placeholder="Enter your number" name="phone" formControlName="phoneNumber" class="form-control" 
-          [ngClass]="{' is-invalid ': submitted && f.phoneNumber.errors}" required>
+          [ngClass]="{' is-invalid ': submitted && f.phoneNumber.errors}" title="Enter your Phone Number" required>
           <div *ngIf="submitted && f.phoneNumber.errors" class="invalid-feedback">
             <div *ngIf="f.phoneNumber.errors.required">Phone Number is required</div>
           </div>
@@ -46,7 +46,7 @@
         <div class="form-group">
           <span class="details">Password</span>
           <input type="password" placeholder="Enter your password" formControlName="password" class="form-control"
-            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required>
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" title="Enter your 6 digit password" required>
           <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
             <div *ngIf="f.password.errors.required">Password is required</div>
             <div *ngIf="f.password.errors.minlength">
@@ -60,7 +60,7 @@
         <div class="form-group">
           <span class="details">Confirm Password</span>
           <input type="password" placeholder="Confirm your password" formControlName="confirmPassword"
-            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" required>
+            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" title="Enter your Confirm Password" required>
           <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
             <div *ngIf="f.confirmPassword.errors.required">
               Confirm Password is required
@@ -115,7 +115,7 @@
                 <button class="btn btn-info" type="button" (click)="onEdit(row)" 
                 data-toggle="tooltip" data-placement="top" title="When click the Edit Button this column values are shown in above form">Edit</button>
                 <button class="btn btn-danger" type="button" (click)="deleteEmployee(row)"
-                data-toggle="tooltip" data-placement="top" title="whwn click this Delete Button this column values are Deleted">Delete</button>
+                data-toggle="tooltip" data-placement="top" title="when click this Delete Button this column values are Deleted">Delete</button>
               </td>
           </tr>
       </tbody>

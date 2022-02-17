@@ -2,10 +2,10 @@
   "posts": [
     {
       "id": 1,
-      "fullName": "Ashwin Kumar",
-      "userName": "Ashwin",
-      "email": "ashwin24@gmail.com",
-      "phoneNumber": "9878670976",
+      "fullName": "Sanjay Kumar",
+      "userName": "Sanjay",
+      "email": "sanjay12@gmail.com",
+      "phoneNumber": "9806678801",
       "password": "abcdefgh",
       "confirmPassword": "abcdefgh"
     }

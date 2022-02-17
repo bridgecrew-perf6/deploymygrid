@@ -5,30 +5,30 @@
       <a href="#"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a>
       <a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a>
     </div>  -->
-    <form action="#">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
       <div class="input_box">
-        <input type="text" placeholder="Email or Phone" required>
-        <div class="icon"><i class="fas fa-user"></i></div>
-      </div>
-      <div class="input_box">
-        <input type="password" placeholder="Password" required>
-        <div class="icon"><i class="fas fa-lock"></i></div>
-      </div>
-      <div class="option_div">
-        <div class="check_box">
-          <input type="checkbox">
-          <span>Remember me</span>
-        </div>
-        <div class="forget_div">
-          <a href="#">Forgot password?</a>
+        <span class="unmae">Username</span>
+        <input type="text" placeholder="Enter your Email or Phone" formControlName="userName" class="form-control"
+        [ngClass]="{'is-invalid': submitted && f.userName.errors}" required>
+        <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+          <div *ngIf="f.userName.errors.required">Username is required</div>
         </div>
       </div>
+    </div>
+      <div class="input_box">
+        <span class="pwd">Password</span>
+        <input type="password" placeholder="Enter your Password" formControlName="password" class="form-control"
+        [ngClass]="{'is-invalid': submitted && f.password.errors}" required>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+      </div>
+      
       <div class="input_box button">
         <input type="submit" value="Login">
       </div>
-      <div class="sign_up">
-        Not a member? <a href="#">Signup now</a>
-      </div>
+      
     </form>
   </div>
   

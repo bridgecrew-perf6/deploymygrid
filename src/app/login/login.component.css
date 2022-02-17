@@ -12,11 +12,12 @@
     background: linear-gradient(135deg, #71b7e6, #9b59b6);
   }
   .main_div{
-    width: 365px;
+    width: 335px;
     background: #fff;
     padding: 30px;
     border-radius: 5px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+    height: 400px;
   }
   .main_div .title{
     text-align: center;
@@ -62,10 +63,12 @@
     margin-top: 25px;
   }
   form .input_box{
-    height: 50px;
+    height: 40px;
     width: 100%;
     position: relative;
-    margin-top: 15px;
+    margin-top: 45px;
+    margin-bottom: 20px;
+    font-size: 17px;
   }
   .input_box input{
     height: 100%;
@@ -114,6 +117,7 @@
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s linear;
+    margin-top: 20px;
   }
   .button input:hover{
     background: #a720c5;
@@ -131,4 +135,7 @@
   form a:hover{
     text-decoration: underline;
   }
+  
+  
+  
   
