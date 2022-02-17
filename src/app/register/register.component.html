@@ -76,8 +76,11 @@
         <div><img [src]="url" *ngIf="url" height="100" width="100" id="img1"></div>
         <p>
           <input type="file" (change)="selectFile($event)">
+          <a href="" download="">           
+             <input type="button" value="Download">
+            </a>
         </p>
-      </div>
+        </div>
       <div class="button">
         <input type="submit" value="Register" (click)="postEmployeeDetails()" title="When clicked this Button Form Values will be stored into the below table">
         <input type="button" value="Update" (click)="updateEmployee()" title="When Clicked this Button Values will be updated">
